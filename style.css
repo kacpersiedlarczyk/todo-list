@@ -122,9 +122,9 @@ body {
     gap: 1.25rem;
 }
 
-.task-input label {
+/* .task-input label {
     cursor: pointer;
-}
+} */
 
 input[type="checkbox"] {
     -webkit-appearance: none;
