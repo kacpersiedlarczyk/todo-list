@@ -77,7 +77,6 @@ clearButton.addEventListener("click", (event) => {
 
 render(tasks);
 
-// onw module
 class Task {
     constructor(id, title, completed) {
         this.id = id;
@@ -86,14 +85,12 @@ class Task {
     }
 }
 
-// own module
 function clearElement(element) {
     while (element.firstChild) {
         element.removeChild(element.firstChild);
     }
 }
 
-// own module
 function completeTask(task) {
     const label = task.nextElementSibling;
     label.classList.toggle("completed");
@@ -105,7 +102,6 @@ function completeTask(task) {
     }
 }
 
-// own module
 function deleteTask(task) {
     for (let i = 0; i < tasks.length; i++) {
         if (task.dataset.id === tasks[i].id) {
@@ -115,36 +111,31 @@ function deleteTask(task) {
     }
 }
 
-// own module
 function getActive(list) {
     return list.filter((task) => !task.completed);
 }
 
-// own module
 function getCompleted(list) {
     return list.filter((task) => task.completed);
 }
 
-//onw module
 function clearCompleted(list) {
     const active = getActive(list);
     tasks = active;
 }
 
-// own module
 function removeActiveClass(arr) {
     for (let i = 0; i < arr.length; i++) {
         arr[i].classList.remove("active");
     }
 }
 
-// own module
-function render(tasksList) {
+function render(list) {
     const tasksContainer = document.querySelector(".tasks");
 
     clearElement(tasksContainer);
 
-    tasksList.forEach((task) => {
+    list.forEach((task) => {
         tasksContainer.innerHTML += `
             <div class="task">
                 <div class="task-input">
